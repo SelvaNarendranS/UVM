@@ -36,7 +36,6 @@ class fa_scoreboard extends uvm_scoreboard;
     carry1 = trans.carry;
     
     `uvm_info(get_type_name(), $sformatf(" received to scoreboard = \n%0s", trans.convert2string()), UVM_LOW);
-//     $display("scoreboard : %0t | en = %0d | wr_en = %0d | data_in = %0h | addr = %0h | data_out = %0h", $time,  trans.en, trans.wr_en, trans.data_in, trans.addr, trans.data_out);
     
     self_check(a1, b1, c1, sum1, carry1);	// calling self check function
     
@@ -52,7 +51,8 @@ class fa_scoreboard extends uvm_scoreboard;
   );
     bit expected_sum = 0;
     bit expected_carry = 0;
-    
+
+    // expected evaluation
     expected_sum   = ((a ^ b) ^ c);
     expected_carry = (a & b) | (a & c) | (b & c);
     
@@ -74,5 +74,6 @@ class fa_scoreboard extends uvm_scoreboard;
   endfunction
   
 endclass
+
 
 `endif
