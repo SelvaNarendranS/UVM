@@ -52,12 +52,11 @@ class fa_monitor extends uvm_monitor;
     trans.carry	= vintf.carry;
     
     `uvm_info(get_type_name(), $sformatf("%0s",trans.convert2string()), UVM_LOW);
-    
-//     $display("monitor : %0t | en = %0d | wr_en = %0d | data_in = %0h | addr = %0h | data_out = %0h", $time, trans.en, trans.wr_en, trans.data_in, trans.addr, trans.data_out);
-    
-//     `uvm_info("MONITOR", $sformatf(" sampled by monitor = \n%0s", tr.sprint()), UVM_LOW);
+       
+    //     `uvm_info("MONITOR", $sformatf(" sampled by monitor = \n%0s", tr.sprint()), UVM_LOW);     // used to print in a tabular format
   endtask
   
 endclass
+
 
 `endif    
