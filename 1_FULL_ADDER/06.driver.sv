@@ -48,7 +48,7 @@ class fa_driver extends uvm_driver #(fa_transaction);
     vintf.c = tr.c;
     
     `uvm_info(get_type_name(), $sformatf("%0s",tr.convert2string()), UVM_LOW);
-    #2;		// delay for data get stable
+    #3;		// delay for data get stable
   endtask
   
 endclass
