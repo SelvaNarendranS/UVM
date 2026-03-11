@@ -36,105 +36,105 @@ UVM_INFO sequence.sv(30) @ 0: uvm_test_top.env.agt.seqr@@seq [fa_sequence] Start
 
 UVM_INFO sequence.sv(39) @ 0: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
 UVM_INFO driver.sv(50) @ 0: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 2000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 2000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO monitor.sv(55) @ 3000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 3000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 2000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 2000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 3000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 3000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 1
 
-UVM_INFO sequence.sv(39) @ 2000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 2000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 4000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 4000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 3000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 3000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 6000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 6000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 4000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 4000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 6000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 6000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 2
 
-UVM_INFO sequence.sv(39) @ 4000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 4000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 6000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 6000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 6000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 6000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 9000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 1 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 9000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 0 | b = 1 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 6000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 6000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 9000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 9000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 3
 
-UVM_INFO sequence.sv(39) @ 6000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 6000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 8000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(38) @ 8000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 9000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 9000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 12000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 1
+UVM_INFO scoreboard.sv(38) @ 12000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 1 | b = 1 | c = 0 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(61) @ 8000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 8000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 12000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 12000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 4
 
-UVM_INFO sequence.sv(39) @ 8000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 8000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 10000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 10000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 12000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 12000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 15000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 1 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 15000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 0 | b = 0 | c = 1 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 10000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 10000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 15000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 15000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 5
 
-UVM_INFO sequence.sv(39) @ 10000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 10000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 12000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(38) @ 12000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 15000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 15000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 18000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 1
+UVM_INFO scoreboard.sv(38) @ 18000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 1 | b = 0 | c = 1 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(61) @ 12000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 12000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 18000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 18000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 6
 
-UVM_INFO sequence.sv(39) @ 12000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 12000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 14000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(38) @ 14000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 18000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 18000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 21000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 1
+UVM_INFO scoreboard.sv(38) @ 21000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 0 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 1
-UVM_INFO scoreboard.sv(61) @ 14000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 14000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 21000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 21000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 7
 
-UVM_INFO sequence.sv(39) @ 14000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 14000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 16000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 1 | carry = 1
-UVM_INFO scoreboard.sv(38) @ 16000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 21000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 21000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 24000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 1 | carry = 1
+UVM_INFO scoreboard.sv(38) @ 24000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 1 | b = 1 | c = 1 | OUTPUT : sum = 1 | carry = 1
-UVM_INFO scoreboard.sv(61) @ 16000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 16000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 24000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 24000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 8
 
-UVM_INFO sequence.sv(39) @ 16000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 16000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 18000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 18000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 24000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 24000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 27000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 27000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 0 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 18000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 18000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 27000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 27000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 9
 
-UVM_INFO sequence.sv(39) @ 18000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO driver.sv(50) @ 18000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
-UVM_INFO monitor.sv(54) @ 20000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(38) @ 20000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
+UVM_INFO sequence.sv(39) @ 27000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO driver.sv(50) @ 27000: uvm_test_top.env.agt.drv [fa_driver] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 0 | carry = 0
+UVM_INFO monitor.sv(55) @ 30000: uvm_test_top.env.agt.mon [fa_monitor] INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
+UVM_INFO scoreboard.sv(38) @ 30000: uvm_test_top.env.scb [fa_scoreboard]  received to scoreboard = 
 INPUT : a = 1 | b = 0 | c = 0 | OUTPUT : sum = 1 | carry = 0
-UVM_INFO scoreboard.sv(61) @ 20000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
-UVM_INFO scoreboard.sv(68) @ 20000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
+UVM_INFO scoreboard.sv(60) @ 30000: uvm_test_top.env.scb [fa_scoreboard] ------------------- sum -- PASS -----------------
+UVM_INFO scoreboard.sv(67) @ 30000: uvm_test_top.env.scb [fa_scoreboard] ------------------- carry -- PASS -----------------
 ---------------------------------------------------------- 10
 
-UVM_INFO sequence.sv(56) @ 20000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] Inside the post body
-UVM_INFO sequence.sv(51) @ 20000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] Inside the post start
-UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_objection.svh(1276) @ 21000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO environment.sv(39) @ 21000: uvm_test_top.env [fa_environment] Inside the extract phase
-UVM_INFO environment.sv(43) @ 21000: uvm_test_top.env [fa_environment] Inside the check phase
-UVM_INFO coverage.sv(49) @ 21000: uvm_test_top.env.cov [COVERAGE] ---------------------------------------------------------
-UVM_INFO coverage.sv(50) @ 21000: uvm_test_top.env.cov [COVERAGE] Full Adder functional coverage = 100.00%
-UVM_INFO coverage.sv(51) @ 21000: uvm_test_top.env.cov [COVERAGE] ---------------------------------------------------------
-UVM_INFO environment.sv(47) @ 21000: uvm_test_top.env [fa_environment] Inside the report phase
-UVM_INFO environment.sv(51) @ 21000: uvm_test_top.env [fa_environment] Inside the final phase
-UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_report_server.svh(904) @ 21000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO sequence.sv(56) @ 30000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] Inside the post body
+UVM_INFO sequence.sv(51) @ 30000: uvm_test_top.env.agt.seqr@@seq [fa_sequence] Inside the post start
+UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_objection.svh(1276) @ 31000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO environment.sv(39) @ 31000: uvm_test_top.env [fa_environment] Inside the extract phase
+UVM_INFO environment.sv(43) @ 31000: uvm_test_top.env [fa_environment] Inside the check phase
+UVM_INFO coverage.sv(49) @ 31000: uvm_test_top.env.cov [COVERAGE] ---------------------------------------------------------
+UVM_INFO coverage.sv(50) @ 31000: uvm_test_top.env.cov [COVERAGE] Full Adder functional coverage = 100.00%
+UVM_INFO coverage.sv(51) @ 31000: uvm_test_top.env.cov [COVERAGE] ---------------------------------------------------------
+UVM_INFO environment.sv(47) @ 31000: uvm_test_top.env [fa_environment] Inside the report phase
+UVM_INFO environment.sv(51) @ 31000: uvm_test_top.env [fa_environment] Inside the final phase
+UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_report_server.svh(904) @ 31000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
@@ -159,4 +159,4 @@ UVM_FATAL :    0
 [fa_test]     1
 
 $finish called from file "/apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_root.svh", line 532.
-$finish at simulation time                21000
+$finish at simulation time                31000
