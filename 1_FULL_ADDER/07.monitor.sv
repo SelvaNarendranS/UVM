@@ -44,19 +44,19 @@ class fa_monitor extends uvm_monitor;
   // task sample - sample input and output from dut
   task sample(virtual fa_intf.tb vintf);
 
-    #2;		// wait for dut to process and sample after stable output
+    #1;		// wait for dut to process and sample after stable output
     trans.a		= vintf.a;
     trans.b		= vintf.b;
     trans.c		= vintf.c;
     trans.sum	= vintf.sum;
     trans.carry	= vintf.carry;
+    #2;
     
     `uvm_info(get_type_name(), $sformatf("%0s",trans.convert2string()), UVM_LOW);
-       
-    //     `uvm_info("MONITOR", $sformatf(" sampled by monitor = \n%0s", tr.sprint()), UVM_LOW);     // used to print in a tabular format
+     
+//     `uvm_info("MONITOR", $sformatf(" sampled by monitor = \n%0s", tr.sprint()), UVM_LOW);
   endtask
   
 endclass
-
 
 `endif    
