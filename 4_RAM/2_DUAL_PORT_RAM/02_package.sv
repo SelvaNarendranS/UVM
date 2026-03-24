@@ -9,7 +9,7 @@ package dr_pkg;
   // parameters
   parameter WIDTH = 4;
   parameter DEPTH = 8;
-  parameter int MODE  = 0;		// mode0 - read first, mode1 - write first
+  parameter int MODE = 0;		// mode0 - read first, mode1 - write first
   
   // include UVM classes --- components & objects  -- bottom to top hierachy
   // objects
@@ -24,8 +24,9 @@ package dr_pkg;
   
   // scoreboard
   `include "scoreboard.sv"				// base parent scoreboard
-  `include "scoreboard_mode0.sv"		// mode0 scoreboard
-  `include "scoreboard_mode1.sv"		// mode scoreboard
+//   `include "scoreboard_mode0.sv"		// mode0 scoreboard
+//   `include "scoreboard_mode1.sv"		// mode1 scoreboard
+`include "dr_scoreboard.sv"
 
   `include "coverage.sv"
   `include "environment.sv"
