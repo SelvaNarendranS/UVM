@@ -1,19 +1,20 @@
 // Dual port ram
 
 module dual_port_ram #(parameter WIDTH = 8,
-                       parameter DEPTH = 256,
-                       parameter MODE = 0) (		// mode0 - read first, mode1 - write first
+                       parameter DEPTH = 256) (		
   
   input 					clk,
-  input 					en,
+  input 					mode,		// mode0 - read first, mode1 - write first
   
   // port A
+  input 					a_en,		// cs
   input 					a_wr,
   input [$clog2(DEPTH)-1:0] a_addr,
   input [WIDTH-1:0] 		a_data_in,
   output reg [WIDTH-1:0]	a_data_out,
   
   // port B
+  input 					b_en,		// cs
   input 					b_wr,
   input [$clog2(DEPTH)-1:0] b_addr,
   input [WIDTH-1:0] 		b_data_in,
@@ -25,8 +26,8 @@ module dual_port_ram #(parameter WIDTH = 8,
   
   // read first(read before write) -- mode0
   always @(posedge clk) begin
-    if(MODE == 0) begin
-      if(en) begin
+    if(mode == 0) begin
+      if(a_en && b_en) begin
         a_data_out <= mem[a_addr];		// port A read
         b_data_out <= mem[b_addr];		// port B read
       
@@ -49,8 +50,8 @@ module dual_port_ram #(parameter WIDTH = 8,
     end
     
     else begin
-    // write first(write before read)
-      if(en) begin      
+      // write first(write before read)
+      if(a_en && b_en) begin      
         // priority setting
         if((a_wr && b_wr) && (a_addr == b_addr)) begin
           mem[a_addr] <= a_data_in;			// port A has highest priority
@@ -65,7 +66,7 @@ module dual_port_ram #(parameter WIDTH = 8,
             a_data_out  <= a_data_in;
           end
           else
-            a_data_out  <= a_data_in;		// read only port A
+            a_data_out  <= mem[a_addr];		// read only port A
         
           // port B
           if(b_wr) begin
@@ -73,7 +74,7 @@ module dual_port_ram #(parameter WIDTH = 8,
             b_data_out  <= b_data_in;
           end
           else
-            b_data_out  <= b_data_in;		// read only port B
+            b_data_out  <= mem[b_addr];		// read only port B
         end
       end
       else begin
@@ -84,5 +85,3 @@ module dual_port_ram #(parameter WIDTH = 8,
   end
   
 endmodule
-
-// https://edaplayground.com/x/UZkz
