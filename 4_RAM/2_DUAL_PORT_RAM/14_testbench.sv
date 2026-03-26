@@ -7,17 +7,17 @@
 `include "sr_interface.sv"
 
 // uvm bootstrap 
+// import uvm_pkg :: *;		// sv package import directive	-- added in package file
 import dr_pkg :: *;			// importing dr package
 `include "uvm_macros.svh"	// uvm macros - compailer directive -- to access macros
 
 module dr_testbench;
   bit clk;
-  logic mode_signal;  // Add a 1-bit mode signal
+  bit mode_signal;
   
   sr_intf #(WIDTH, DEPTH) stb_vintf(clk);		// interface handle
-  dr_intf #(WIDTH, DEPTH, MODE) tb_vintf(clk);		// interface handle
+  dr_intf #(WIDTH, DEPTH) tb_vintf(clk);		// interface handle
   
-  // Assign mode value
   assign mode_signal = MODE;
   assign tb_vintf.mode = MODE;
   
@@ -25,7 +25,7 @@ module dr_testbench;
   dual_port_ram #(.WIDTH(WIDTH),
                   .DEPTH(DEPTH))
   dut(.clk		  (clk),
-      .mode		  (mode_signal),  // Use 1-bit signal instead of parameter
+      .mode		  (mode_signal),
       
       // port A
       .a_en 	  (tb_vintf.a_en),
@@ -51,8 +51,10 @@ module dr_testbench;
   // configuration interface and calling run_test
   initial begin
     // interface configuration to database
-    uvm_config_db #(virtual dr_intf #(WIDTH, DEPTH, MODE)) :: set(null, "*", "dr_vintf", tb_vintf);
+    uvm_config_db #(virtual dr_intf #(WIDTH, DEPTH)) :: set(null, "*", "dr_vintf", tb_vintf);
+    
     uvm_config_db #(virtual sr_intf #(WIDTH, DEPTH)) :: set(null, "*", "vintf", stb_vintf);
+    
     
     // configuring ram mode into database   -- for scoreboards
     uvm_config_db #(int) :: set(null, "*", "ram_mode", MODE);
