@@ -31,20 +31,22 @@ module sync_fifo #(parameter WIDTH = 8,
     else begin
       // write
       if(wr_enable && !full) begin
-      mem[wr_ptr] <= data_in;
-      wr_ptr <= wr_ptr + 1'b1;
-    end
+        mem[wr_ptr] <= data_in;
+        wr_ptr <= wr_ptr + 1'b1;
+      end
       
       // read
       if(rd_enable && !empty) begin
-      data_out <= mem[rd_ptr];
-      rd_ptr   <= rd_ptr + 1'b1;
+        data_out <= mem[rd_ptr];
+        rd_ptr   <= rd_ptr + 1'b1;
+      end
     end
   end
   
   // full & empty condition
   assign full  = (wr_ptr + 1'b1) == rd_ptr;
   assign empty = wr_ptr == rd_ptr;
+    
 endmodule  
 
 // https://www.edaplayground.com/x/eZ7s
