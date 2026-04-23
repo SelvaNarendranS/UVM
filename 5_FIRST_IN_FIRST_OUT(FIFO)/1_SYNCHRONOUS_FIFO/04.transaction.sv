@@ -1,4 +1,7 @@
-// transaction 
+// transaction
+
+`ifndef SYNC_FIFO_TRANSACTION
+`define SYNC_FIFO_TRANSACTION
 
 class sync_fifo_transaction extends uvm_sequence_item;
   
@@ -40,3 +43,5 @@ class sync_fifo_transaction extends uvm_sequence_item;
   }
   
 endclass
+
+`endif
