@@ -5,7 +5,7 @@
 `include "package.sv"
 `include "interface.sv"
 
-`import sync_fifo_pkg :: *;
+ import sync_fifo_pkg :: *;
 `include "uvm_macros.svh"
 
 module sync_fifo_testbench;
