@@ -1,4 +1,5 @@
-// UVM -- SCOSCOREBOARD
+// UVM -- scoreboard 
+
 `ifndef SYNC_FIFO_SCOREBOARD_SV
 `define SYNC_FIFO_SCOREBOARD_sv
 
@@ -20,7 +21,13 @@ class sync_fifo_scoreboard extends uvm_scoreboard;
   endfunction
   
   // selfcheck fifo memory
-  longint fifo[$:DEPTH - 1];
+  longint fifo[$];
+  int count;
+  bit [$clog2(DEPTH):0] wr_ptr;
+  bit [$clog2(DEPTH):0] rd_ptr;
+  
+  bit temp_check;
+  bit [WIDTH-1:0] temp_expected;
   
   // implementation of the analysis port write method
   function void write(sync_fifo_transaction trans);
@@ -35,16 +42,16 @@ class sync_fifo_scoreboard extends uvm_scoreboard;
     
 
     // getting values from analysis port and storing to variable
-    rst 	   = trans.reset;
-    wr_en 	   = trans.wr_enable;
-    rd_en 	   = trans.rd_enable;
-    datain   = trans.data_in;
+    rst 	= trans.reset;
+    wr_en 	= trans.wr_enable;
+    rd_en 	= trans.rd_enable;
+    datain  = trans.data_in;
     dataout = trans.data_out;
     full1   = trans.full;
     empty1  = trans.empty;
     
     
-    `uvm_info(get_type_name(), $sformatf("reset = %0d | wr_enable = %0d | rd_enable = %0d | data_in = %0d | data_out = %0d | full = %0d | empty = %0d", reset, wr_enable, rd_enable, data_in, data_out, full, empty), UVM_LOW);
+    `uvm_info(get_type_name(), $sformatf("reset = %0d | wr_enable = %0d | rd_enable = %0d | data_in = %0d | data_out = %0d | full = %0d | empty = %0d", rst, wr_en, rd_en, datain, dataout, full1, empty1), UVM_LOW);
     
     self_check(rst, wr_en, rd_en, datain, dataout, full1, empty1);	// calling self check function
     
@@ -63,46 +70,52 @@ class sync_fifo_scoreboard extends uvm_scoreboard;
     bit [WIDTH - 1 : 0]		expected;
     bit exp_full;
     bit exp_empty;
-    int 				    count;
-    bit [$clog2(DEPTH) - 1:0] wr_ptr;
-    bit [$clog2(DEPTH) - 1:0] rd_ptr;
 
     // expected evaluation
     $display("%0d", count);
       
-      if(trans.rst) begin			// reset condition
-        wr_ptr   = 0;
-        expected = 0;
-        rd_ptr   = 0;
-      end
+    if(reset) begin			// reset condition
+      wr_ptr   = 0;
+      expected = 0;
+      rd_ptr   = 0;
+      temp_check = 0;
+      temp_expected = 0;
+      fifo.delete();
+    end
       
       // Write condition
-    else if(wr_enable && !exp_full) begin
-        fifo.push_back(data_in);
-      	wr_ptr = wr_ptr + 1'b1;
-      end
-      
-      // read condition 
-    else if(trans.rd_enable && !exp_empty) begin
-        expected = fifo.pop_front();
-        rd_ptr = rd_ptr + 1'b1;
-      end
+    else begin
       
       // full & empty condition
-      exp_full  = (wr_ptr + 1'b1) == rd_ptr;
+      exp_full  = ((wr_ptr[$clog2(DEPTH)-1:0]) == rd_ptr[$clog2(DEPTH)-1:0]) && (wr_ptr[$clog2(DEPTH)] != rd_ptr[$clog2(DEPTH)]);
       exp_empty = wr_ptr == rd_ptr;
       
-      if(trans.rd_en)begin
-        if(expected == data_out) begin
+      // checking data_out last cycle
+      if(temp_check)begin
+        if(temp_expected == data_out) begin
           $display("--------------------------------------");
           $display("           data out - PASS");  
           $display("--------------------------------------");
         end
         else begin
           $display("--------------------------------------");
-          $display("           data out - FAIL");  
+          $display("           data out - FAIL --- expected = %0d | got = %0d", temp_expected, data_out);  
           $display("--------------------------------------");
         end
+        temp_check = 0;
+      end
+      
+      
+      if(wr_enable && !exp_full) begin
+        fifo.push_back(data_in);
+      	wr_ptr = wr_ptr + 1'b1;
+      end
+      
+      // read condition 
+      if(rd_enable && !exp_empty) begin
+        temp_expected = fifo.pop_front;
+        rd_ptr = rd_ptr + 1'b1;
+        temp_check = 1;
       end
       
     if(full == exp_full) begin
@@ -126,6 +139,7 @@ class sync_fifo_scoreboard extends uvm_scoreboard;
           $display("         empty - FAIL");  
           $display("--------------------------------------");
         end
+    end
       
       count++;
     
