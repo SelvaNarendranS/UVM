@@ -1,7 +1,7 @@
 // monitor
 
-`ifndef "SYNC_FIFO_MONITOR"
-`define "SYNC_FIFO_MONITOR"
+`ifndef SYNC_FIFO_MONITOR
+`define SYNC_FIFO_MONITOR
 
 class sync_fifo_monitor extends uvm_monitor;
   
@@ -52,7 +52,7 @@ class sync_fifo_monitor extends uvm_monitor;
     trans.full		= vintf.sample_cb.full;
     trans.empty		= vintf.sample_cb.empty;
     
-    `uvm_info(get_type_name(), $sformatf("reset = %0d | wr_enable = %0d | rd_enable = %0d | data_in = %0d | data_out = %0d | full = %0d | empty = %0d", reset, wr_enable, rd_enable, data_in, data_out, full, empty), UVM_LOW);
+    `uvm_info(get_type_name(), $sformatf("reset = %0d | wr_enable = %0d | rd_enable = %0d | data_in = %0d | data_out = %0d | full = %0d | empty = %0d", trans.reset, trans.wr_enable, trans.rd_enable, trans.data_in, trans.data_out, trans.full, trans.empty), UVM_LOW);
     
   endtask
   
