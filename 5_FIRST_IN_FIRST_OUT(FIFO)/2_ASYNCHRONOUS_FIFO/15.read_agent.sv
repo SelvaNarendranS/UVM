@@ -1,0 +1,49 @@
+// UVM -- read AGENT
+
+`ifndef ASYNC_FIFO_RD_AGENT_SV
+`define ASYNC_FIFO_RD_AGENT_SV
+
+// `include "write_sequencer.sv"
+// `include "write_driver.sv"
+// `include "write_monitor.sv"
+
+class async_fifo_rd_agent extends uvm_agent;
+  
+  // factory registration
+  `uvm_component_utils(async_fifo_rd_agent)
+  
+  async_fifo_rd_sequencer rd_seqr;
+  async_fifo_rd_driver	  rd_drv;
+  async_fifo_rd_monitor   rd_mon;		// child class handles
+  
+  uvm_active_passive_enum is_active; 			// enum defined inside uvm -- for setting active passive
+  
+  // default new constructor -- to allocate object(memory allocation)
+  function new(string name = "async_fifo_rd_agent", uvm_component parent);	// getting arguments of class instance and parent name
+    super.new(name, parent);
+  endfunction
+  
+  // build phase -- (object)memory allocation to its child class
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if(get_is_active == UVM_ACTIVE)	begin	// getting agent class property and and passing active components only
+      
+      rd_seqr = async_fifo_rd_sequencer :: type_id :: create("rd_seqr", this);	// factory based instantiation 
+      rd_drv  = async_fifo_rd_driver :: type_id :: create("rd_drv", this);
+    end
+    rd_mon = async_fifo_rd_monitor :: type_id :: create("rd_mon", this);		// it can be active or passive property
+  endfunction
+  
+  // connect phase -- connecting driver and sequencer
+  function void connect_phase(uvm_phase phase);
+    if(get_is_active == UVM_ACTIVE)	begin
+      if(rd_drv != null && rd_seqr != null)		// driver and sequencer should have objectA
+        rd_drv.seq_item_port.connect(rd_seqr.seq_item_export);		// connecting driver to sequencer
+      else
+        `uvm_error(get_type_name(), "Driver and sequencer missing of memory allocation")
+    end
+  endfunction
+      
+endclass
+        
+`endif
