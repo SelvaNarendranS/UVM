@@ -10,7 +10,10 @@ module async_fifo_testbench;
   bit wr_clk;
   bit rd_clk;
   
-  intf #(WIDTH, DEPTH) vintf(clk);		// interface instance
+  intf #(WIDTH, DEPTH) vintf();		// interface instance
+  
+  assign vintf.wr_clk = wr_clk;
+  assign vintf.rd_clk = rd_clk;
   
   // instantation
   async_fifo #(.WIDTH(WIDTH),
@@ -30,15 +33,17 @@ module async_fifo_testbench;
   // write and read clock generation
   initial begin
     wr_clk = 0;
-    rd_clk = 0;
-    
     forever #5 wr_clk = ~wr_clk;
+  end
+  
+  initial begin
+    rd_clk = 0;
     forever #10 rd_clk = ~rd_clk;
   end
   
   initial begin
     // condig data base setup
-    uvm_config_db( virtual intf #(WIDTH, DEPTH)) :: set(null, "*", "vintf", vintf);
+    uvm_config_db #(virtual intf #(WIDTH, DEPTH)) :: set(null, "*", "vintf", vintf);
     run_test("async_fifo_test");
   end
   
