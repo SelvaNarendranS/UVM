@@ -33,13 +33,13 @@ interface intf #(parameter WIDTH = 8,
   
   // write clocking block -- sample
   clocking wr_cb_sample @(posedge wr_clk);
-    default input #0;
+    default input #1step;
     input wr_rst, wr_en, data_in, full;
   endclocking
   
   // read clocking block -- sample
   clocking rd_cb_sample @(posedge rd_clk);
-    default input #0;
+    default input #1step;
     input rd_rst, rd_en, data_out, empty;
   endclocking  
   
