@@ -9,7 +9,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
   `uvm_object_utils(async_fifo_virtual_sequence)
   
   // connecting to virtual sequencer
-  `uvm_declare_p_sequencer(async_fifo_virtual_sequencer)
+  `uvm_declare_p_sequencer(async_fifo_virtual_sequencer);
   
   // default constructor
   function new(string name = "async_fifo_virtual_sequence");
@@ -18,11 +18,12 @@ class async_fifo_virtual_sequence extends uvm_sequence;
   
   // generating stimulus to the dut
   task body;
-    `uvm_info(get_type_name(), "Inside Virtual sequence", UVM_LOW);
     
     // Astual write and read domain sequence handle
     async_fifo_wr_sequence wr_seq;
-    async_fifo_wr_sequence rd_seq;
+    async_fifo_rd_sequence rd_seq;
+    
+    `uvm_info(get_type_name(), "Inside Virtual sequence", UVM_LOW)
     
     // creating read and write sequence
     wr_seq = async_fifo_wr_sequence :: type_id :: create("wr_seq");
@@ -36,8 +37,10 @@ class async_fifo_virtual_sequence extends uvm_sequence;
       end
       
       begin
+        #50;
         rd_seq.start(p_sequencer.rd_seqr);
       end
+    join
       
   endtask
       
