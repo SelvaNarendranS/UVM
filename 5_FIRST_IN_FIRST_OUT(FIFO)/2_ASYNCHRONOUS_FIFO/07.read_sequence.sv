@@ -1,4 +1,4 @@
-// sequence
+// read sequence
 
 `ifndef ASYNC_FIFO_RD_SEQUENCE
 `define ASYNC_FIFO_RD_SEQUENCE
@@ -31,7 +31,7 @@ class async_fifo_rd_sequence extends uvm_sequence #(async_fifo_rd_transaction);
         end
       
         // read condition
-        else if(i < (DEPTH*2)) begin
+        else begin //(i < (DEPTH*2)) begin
           $display("---- READ condition ----");
           rd_trans.rst_cnst.constraint_mode(0);				// constraint mode OFF
           rd_trans.rd_cnst.constraint_mode(1);
