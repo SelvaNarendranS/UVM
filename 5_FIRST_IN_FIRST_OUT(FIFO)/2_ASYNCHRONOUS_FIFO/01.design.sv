@@ -51,13 +51,13 @@ module async_fifo #(parameter WIDTH = 8,
       bin_wr_ptr  <= 0;
       gray_wr_ptr <= 0;
     end
-    else begin
-      bin_wr_ptr  <= bin_wr_ptr_next;
-      gray_wr_ptr <= gray_wr_ptr_next;		// allocating the next pointer to the present pointer for execution
-      
+    else begin      
       if(wr_en && !full)
         fifo[bin_wr_ptr[PTR_WIDTH-1:0]] <= data_in;		// write into fifo with present ptr address
       				// pointer address without the extra 1 MSB bit 
+      
+      bin_wr_ptr  <= bin_wr_ptr_next;
+      gray_wr_ptr <= gray_wr_ptr_next;		// allocating the next pointer to the present pointer for execution
     end
   end
   
@@ -69,13 +69,13 @@ module async_fifo #(parameter WIDTH = 8,
       gray_rd_ptr <= 0;
       data_out    <= 0;
     end
-    else begin
-      bin_rd_ptr  <= bin_rd_ptr_next;
-      gray_rd_ptr <= gray_rd_ptr_next;		// allocating the next pointer to the present pointer for execution
-      
+    else begin      
       if(rd_en && !empty)
         data_out <= fifo[bin_rd_ptr[PTR_WIDTH-1:0]];		// read into fifo with present ptr address
-      						// pointer address without the extra 1 MSB bit 
+      						// pointer address without the extra 1 MSB bit
+      
+      bin_rd_ptr  <= bin_rd_ptr_next;
+      gray_rd_ptr <= gray_rd_ptr_next;		// allocating the next pointer to the present pointer for execution
     end
   end
   
