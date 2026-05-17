@@ -3,10 +3,10 @@
 `ifndef ASYNC_FIFO_RD_SEQUENCER
 `define ASYNC_FIFO_RD_SEQUENCER
 
-class async_fifo_rd_sequencer extends uvm_sequencer #(async_fifo_transaction);
+class async_fifo_rd_sequencer extends uvm_sequencer #(async_fifo_rd_transaction);
   
   // factory registration
-  `uvm_component_utils(async_fifo_rd_sequencer);
+  `uvm_component_utils(async_fifo_rd_sequencer)
   
   // default constructor
   function new(string name = "async_fifo_rd_sequencer", uvm_component parent);
