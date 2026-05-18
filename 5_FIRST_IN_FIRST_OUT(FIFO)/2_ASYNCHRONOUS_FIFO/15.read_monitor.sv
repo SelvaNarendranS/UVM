@@ -12,7 +12,7 @@ class async_fifo_rd_monitor extends uvm_monitor;
   virtual intf #(WIDTH, DEPTH) vintf;	// virtual interface
   
   // analysis port
-  uvm_analysis_port #(async_fifo_rd_transaction) wr_analysis_port;
+  uvm_analysis_port #(async_fifo_rd_transaction) rd_analysis_port;
   
    // default constructor
   function new(string name = "async_fifo_rd_monitor", uvm_component parent);
@@ -27,7 +27,7 @@ class async_fifo_rd_monitor extends uvm_monitor;
     if(!uvm_config_db #(virtual intf #(WIDTH, DEPTH)) :: get(this, "", "vintf", vintf))
       `uvm_fatal(get_type_name(), "Virtual interface missing");		// stop the simulation with warning
     
-    rd_analysis_port = new("analysis_port", this);
+    rd_analysis_port = new("rd_analysis_port", this);
   endfunction
   
   // run phase
@@ -42,8 +42,8 @@ class async_fifo_rd_monitor extends uvm_monitor;
   endtask
     
   task read_sample_stimuli(virtual intf #(WIDTH, DEPTH) vintf);
-    @(vintf.rd_cb_sample);
     
+    @(vintf.rd_cb_sample);
     rd_trans.rd_rst 	= vintf.rd_cb_sample.rd_rst;
     rd_trans.rd_en 		= vintf.rd_cb_sample.rd_en;
     rd_trans.data_out	= vintf.rd_cb_sample.data_out;
