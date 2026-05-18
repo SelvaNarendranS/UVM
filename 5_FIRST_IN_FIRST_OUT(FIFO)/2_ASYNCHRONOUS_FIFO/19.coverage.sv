@@ -103,17 +103,17 @@ class async_fifo_coverage extends uvm_component;
   
   // read domain sampling
   virtual function void write_rd(async_fifo_rd_transaction t);
-    rd_rst	 = t.rd_en;
-    data_out = t.empty;
-    rd_rst	 = t.rd_en;
-    data_out = t.empty;
+    rd_rst	 = t.rd_rst;
+    rd_en 	 = t.rd_en;
+    data_out = t.data_out;
+    empty	 = t.empty;
     async_fifo_cg.sample();
   endfunction
   
   function void report_phase(uvm_phase phase);
     super.report_phase(phase);
     `uvm_info("COVERAGE", "---------------------------------------------------------", UVM_LOW);
-    `uvm_info("COVERAGE", $sformatf("SRAM functional coverage = %0.2f%%",async_fifo_cg.get_inst_coverage()), UVM_LOW);
+    `uvm_info("COVERAGE", $sformatf("ASYNC_FIFO functional coverage = %0.2f%%",async_fifo_cg.get_inst_coverage()), UVM_LOW);
     `uvm_info("COVERAGE", "---------------------------------------------------------", UVM_LOW);
   endfunction
   
