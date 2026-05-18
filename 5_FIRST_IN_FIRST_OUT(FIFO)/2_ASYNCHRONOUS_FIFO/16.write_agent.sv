@@ -3,9 +3,9 @@
 `ifndef ASYNC_FIFO_WR_AGENT_SV
 `define ASYNC_FIFO_WR_AGENT_SV
 
-`include "write_sequencer.sv"
-`include "write_driver.sv"
-`include "write_monitor.sv"
+// `include "write_sequencer.sv"
+// `include "write_driver.sv"
+// `include "write_monitor.sv"
 
 class async_fifo_wr_agent extends uvm_agent;
   
@@ -13,10 +13,10 @@ class async_fifo_wr_agent extends uvm_agent;
   `uvm_component_utils(async_fifo_wr_agent)
   
   async_fifo_wr_sequencer wr_seqr;
-  async_fifo_wr_driver	   wr_drv;
+  async_fifo_wr_driver	  wr_drv;
   async_fifo_wr_monitor   wr_mon;		// child class handles
   
-  uvm_active_passive_enum is_active; 			// enum defined inside uvm -- for setting active passive
+//   uvm_active_passive_enum is_active; 			// enum defined inside uvm -- for setting active passive
   
   // default new constructor -- to allocate object(memory allocation)
   function new(string name = "async_fifo_wr_agent", uvm_component parent);	// getting arguments of class instance and parent name
