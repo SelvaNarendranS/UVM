@@ -16,7 +16,7 @@ class async_fifo_rd_agent extends uvm_agent;
   async_fifo_rd_driver	  rd_drv;
   async_fifo_rd_monitor   rd_mon;		// child class handles
   
-  uvm_active_passive_enum is_active; 			// enum defined inside uvm -- for setting active passive
+//   uvm_active_passive_enum is_active; 			// enum defined inside uvm -- for setting active passive
   
   // default new constructor -- to allocate object(memory allocation)
   function new(string name = "async_fifo_rd_agent", uvm_component parent);	// getting arguments of class instance and parent name
