@@ -53,4 +53,14 @@ module async_fifo_testbench;
     $dumpvars;
   end
   
+  initial begin
+    vintf.wr_rst = 0;
+    vintf.rd_rst = 0;
+
+    #20;
+
+    vintf.wr_rst = 1;
+    vintf.rd_rst = 1;
+  end
+  
 endmodule
